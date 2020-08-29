@@ -4,7 +4,17 @@
 
 ## 使用方法
 
-### 0x01 填写配置
+### 0x01 获取B站Cookie
+
+浏览器打开`https://www.bilibili.com/`并且登录账号
+
+按**F12**进入Web控制台，输入以下命令
+
+```js
+console.log(document.cookie)
+```
+
+### 0x02 填写配置
 
 ```py
 # B站的Cookie
@@ -15,7 +25,7 @@ VIDEO_PATH = "C:\\download_bilibili_video_to_audio\\videos"
 MUSIC_PATH = "C:\\download_bilibili_video_to_audio\\musics"
 ```
 
-### 0x02 运行
+### 0x03 运行
 
 ```cmd
 python bilibili.py
