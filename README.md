@@ -26,16 +26,26 @@ console.log(document.cookie)
 
 ### 0x02 填写配置
 
+编辑`config.py`
+
 ```py
-# B站的Cookie
+# B站的Cookie（上一步中获取到的）
 COOKIE = "key1=value1; key2=value2; keyn=valuen"
 # 视频存放位置（绝对路径）
-VIDEO_PATH = "C:\\download_bilibili_video_to_audio\\videos"
+VIDEO_PATH = r"C:\download_bilibili_video_to_audio\videos"
 # 音频存放位置（绝对路径）
-MUSIC_PATH = "C:\\download_bilibili_video_to_audio\\musics"
+MUSIC_PATH = r"C:\download_bilibili_video_to_audio\musics"
 ```
 
 ### 0x03 运行
+
+安装依赖
+
+```cmd
+pip install -r requirements.txt -i https://pypi.douban.com/simple/
+```
+
+运行
 
 ```cmd
 python bilibili.py
