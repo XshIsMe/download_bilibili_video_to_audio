@@ -7,7 +7,12 @@ def main():
     # 获取BV号列表
     bv_list = get_bv_list()
     # 获取视频标题和URL
-    info_list = [(get_video_info(bv)) for bv in bv_list]
+    info_list = []
+    for bv in bv_list:
+        try:
+            info_list.append((get_video_info(bv)))
+        except Exception as msg:
+            print("Get video info error")
     # 下载视频
     for title, video_url in info_list:
         # 打印信息
@@ -33,7 +38,7 @@ def main():
             video_to_audio(video_path, music_path)
         except Exception as msg:
             # 打印出错信息
-            print("Transfrom Error: {title}.mp4".format(title=title))
+            print("Transfrom error: {title}.mp4".format(title=title))
 
 
 if __name__ == "__main__":
