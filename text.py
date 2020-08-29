@@ -48,6 +48,6 @@ PATTERN_DICT = {
 }
 
 PATH_DICT = {
-    "video": VIDEO_PATH,
-    "music": MUSIC_PATH,
+    "video": VIDEO_PATH + "\\{title}.mp4",
+    "music": MUSIC_PATH + "\\{title}.mp3",
 }
