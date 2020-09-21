@@ -1,3 +1,2 @@
-COOKIE = ""
 VIDEO_PATH = r""
 MUSIC_PATH = r""

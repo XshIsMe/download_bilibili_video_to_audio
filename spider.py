@@ -29,10 +29,8 @@ def get_video_info(bv):
 
 
 def get_bv_list():
-    # 获取页面内容
-    response = requests.get(
-        url=URL_DICT["video_list"], headers=HEADERS_DICT["video_list"]
-    )
-    # 匹配所有BV号
-    bv_list = re.findall(PATTERN_DICT["video_bv"], response.text)
+    # 从文件中读取URL列表
+    bv_list = None
+    with open("url_list.txt", "r") as file:
+        bv_list = re.findall(PATTERN_DICT["video_bv"], file.read())
     return bv_list
