@@ -13,6 +13,8 @@ def get_video(video_url, video_path):
 
 
 def get_video_info(bv):
+    # 存储视频信息
+    info_list = []
     # 生成页面URL
     page_url = URL_DICT["video_info"].format(bv=bv)
     # 获取页面内容
@@ -25,7 +27,14 @@ def get_video_info(bv):
     video_url = URL_DICT["video"].format(
         url=re.findall(PATTERN_DICT["video_url"], response.text)[0]
     )
-    return title, video_url
+    # 获取视频p数
+    p_count = len(re.findall(PATTERN_DICT["video_p"], response.text))
+    # 添加第一p
+    info_list.append((title, video_url))
+    # 添加后面的p
+    for i in range(2, p_count + 1):
+        info_list.append((title + "_p" + str(i), video_url + "?p=" + str(i)))
+    return info_list
 
 
 def get_bv_list():

@@ -1,3 +1,4 @@
+import os
 from text import PATH_DICT
 from tool import video_to_audio
 from spider import get_bv_list, get_video_info, get_video
@@ -10,9 +11,14 @@ def main():
     info_list = []
     for bv in bv_list:
         try:
-            info_list.append((get_video_info(bv)))
+            info_list += get_video_info(bv)
         except Exception as msg:
             print("Get video info error")
+    # 如果目录不存在，则创建
+    if not os.path.exists(PATH_DICT["video"]):
+        os.makedirs(PATH_DICT["video"])
+    if not os.path.exists(PATH_DICT["music"]):
+        os.makedirs(PATH_DICT["music"])
     # 下载视频
     for title, video_url in info_list:
         # 打印信息

@@ -1,2 +1,2 @@
-VIDEO_PATH = r""
-MUSIC_PATH = r""
+VIDEO_PATH = r"videos"
+MUSIC_PATH = r"musics"

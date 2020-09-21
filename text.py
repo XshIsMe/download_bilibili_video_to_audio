@@ -32,6 +32,7 @@ PATTERN_DICT = {
     "video_title": r'<title data-vue-meta="true">([\S\s]*?)_哔哩哔哩 \(゜-゜\)つロ 干杯~-bilibili</title>',
     "video_url": r"readyVideoUrl\: '([\S\s]*?)',",
     "video_bv": r"BV[A-Za-z0-9]*",
+    "video_p": r'<li class="part-item[\S\s]*?</li>',
 }
 
 PATH_DICT = {
